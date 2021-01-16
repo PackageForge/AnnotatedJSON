@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "annotated-json": {
+      "projectType": "library",
+      "root": "projects/annotated-json",
+      "sourceRoot": "projects/annotated-json/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/annotated-json/tsconfig.lib.json",
+            "project": "projects/annotated-json/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/annotated-json/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/annotated-json/src/test.ts",
+            "tsConfig": "projects/annotated-json/tsconfig.spec.json",
+            "karmaConfig": "projects/annotated-json/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/annotated-json/tsconfig.lib.json",
+              "projects/annotated-json/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "AnnotatedJSON"
