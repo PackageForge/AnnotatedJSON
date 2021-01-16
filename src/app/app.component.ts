@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { annotate, annotatedJson } from 'projects/annotated-json/src/public-api';
+import { annotate, annotatedJson, parseJson } from 'projects/annotated-json/src/public-api';
 
 const cities=[{name:"London"},{name:"Paris"},{name:"Rome"},{name:"Electra"}];
 const streets=["Main","Happy","Wood","Ellis","Greenwood"];
@@ -56,6 +56,7 @@ export class AppComponent {
     ]
   }
   result=annotatedJson(this.value,annotateIMyObject(this.value),2);
+  parsed=parseJson(this.result);
 
 }
 

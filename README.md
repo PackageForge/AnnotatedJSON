@@ -44,9 +44,9 @@ const myObject:IMyObject = {
 };
 ```
 
-First, import the `annotate` and `annotatedJson` functions into your code file:
+First, import the `annotate`, `annotatedJson`, and `parseJson` functions into your code file:
 ```typescript
-import { annotate, annotatedJson } from '@packageforge/annotated-json';
+import { annotate, annotatedJson, parseJson } from '@packageforge/annotated-json';
 ```
 
 Next, create a function that understands the object to annotate it:
@@ -145,3 +145,11 @@ Now output is a string that looks like so:
   "z": 0
 }
 ```
+
+The annotated JSON can be parsed back to an object using the `parseJson` method:
+```typescript
+const copyOfMyObject=parseJson(output);
+```
+
+The `parseJson` function uses code poached from https://github.com/json5/json5 and we are greatfull for their work. 
+Hopefully they will allow regular expressions and dates.
