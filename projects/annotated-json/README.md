@@ -151,5 +151,5 @@ The annotated JSON can be parsed back to an object using the `parseJson` method:
 const copyOfMyObject=parseJson(output);
 ```
 
-The `parseJson` function uses code poached from https://github.com/json5/json5 and we are greatfull for their work. 
+The `parseJson` function uses code poached from https://github.com/json5/json5 and we are greatful for their work. 
 Hopefully they will allow regular expressions and dates.
